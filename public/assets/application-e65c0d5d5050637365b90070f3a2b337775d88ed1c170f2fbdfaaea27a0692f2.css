@@ -1,0 +1,78 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.userrow {
+  background-color: lightgrey;
+  border: 5px solid skyblue;
+  padding: 1%;
+  padding-left: 10%;
+}
+
+#addspacing {
+	margin-left: 3%;
+}
+
+#betrow {
+	background-color: silver;
+  border: 5px solid mediumorchid;
+  padding: 1%;
+  padding-left: 10%;
+  margin: 1%;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+ body {
+ 	background-color: khaki;
+ }
+ 
+.flashmsg {
+	background-color: #7B68EE;
+	border: 2px solid #000080;
+  padding: 1%;
+  margin-top: 2%;
+  color: white;
+  text-align: center;
+}
+
+.col-xs-6 {
+	padding-bottom: 5%;
+}
+
+#heading {
+	background-color: darkgreen;
+	color: white;
+	font-size: 250%;
+	text-align: center;
+}
+
+.coins {
+	height: 30px;
+	width: 75px;
+	border: 1px solid black;
+	background: white;
+	padding: 0.25%;
+	border-radius: 5px;
+}
