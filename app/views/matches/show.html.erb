@@ -1,0 +1,56 @@
+<br/><br/>
+<div class="row">
+	<%= link_to "Back to All Matches", matches_path %>
+	<h2><%= @match.hometeam %> vs <%= @match.awayteam %></h2><br/><br/>
+	<div class="col-xs-4">
+		<%= @match.hometeam %> Wins <%= @match.homeodds.round(2) %>
+		<%= form_tag user_bets_path do %>
+			<input type="text" name="amount" id="amountHome" autocomplete="off" oninput="returnHome()" onkeypress="return isNumber(event)">
+			<%= hidden_field_tag :id, value: @match.id %>
+			<%= hidden_field_tag :team, value: @match.hometeam %>
+			<%= submit_tag "Bet", class: "btn btn-default" %>
+			<p id="returnh"></p>
+		<% end %>
+		<br/>
+	</div>
+	<div class="col-xs-4">
+		<%= @match.awayteam %> Wins <%= @match.awayodds.round(2) %>
+		<%= form_tag user_bets_path do %>
+			<input type="text" name="amount" id="amountAway" autocomplete="off"  oninput="returnAway()" onkeypress="return isNumber(event)">
+			<%= hidden_field_tag :id, value: @match.id %>
+			<%= hidden_field_tag :team, value: @match.awayteam %>
+			<%= submit_tag "Bet", class: "btn btn-default" %>
+			<p id="returna"></p>
+		<% end %>
+		<br/>
+	</div>
+	<div class="col-xs-4">
+		Match is drawn <%= @match.drawodds.round(2) %>
+		<%= form_tag user_bets_path do %>
+			<input type="text" name="amount" id="amountDraw" autocomplete="off" oninput="returnDraw()" onkeypress="return isNumber(event)">
+			<%= hidden_field_tag :id, value: @match.id %>
+			<%= hidden_field_tag :team, value: "" %>
+			<%= submit_tag "Bet", class: "btn btn-default" %>
+			<p id="returnd"></p>
+		<% end %>
+	</div>
+	<% if current_user && current_user.admin == true %>
+	<div class="col-xs-12" align="center"> 
+		<span>
+			Select Winner :
+			<%= link_to user_prizes_path(name: @match.hometeam, id: @match.id, place: "home") do %>
+			<h3><%= @match.hometeam %></h3>
+			<% end %>
+			OR 
+			<%= link_to user_prizes_path(name: @match.awayteam, id: @match.id, place: "away") do %>
+			<h3><%= @match.awayteam %></h3>
+			<% end %>
+			OR 
+			<%= link_to user_prizes_path(name: "draw", id: @match.id, place: "draw") do %>
+			<h3><%= "Draw" %></h3>
+			<% end %>
+		</span>
+	</div>
+	<% end %>
+	
+</div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Workspace</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<%= include_gon %>
+</head>
+<body>
+	<div class="container">
+		<div class="well well-lg" id="heading">Punter's Paradise</div>
+		<br/>
+		<% if current_user %>
+			Signed in as <strong><%= current_user.name %></strong>!
+			<%= link_to "Sign out", signout_path, id: "sign_out" %><br/>
+			Your coins : <%= current_user.coins %>
+		<% else %>
+			<button class="btn btn-default">
+				<%= link_to '<span class="glyphicon glyphicon-user"></span> Sign Up via Facebook'.html_safe, "/auth/facebook", id: "sign_in" %>
+			</button>
+		<% end %>
+  	<% flash.each do |name, msg| %>
+  	 <div class="flashmsg">
+  			<%= content_tag :div, msg, id: "flash_#{name}" %>
+  		</div>
+  	<% end %> 
+	  <br/><br/>
+		<%= yield %>
+	</div>
+</body>
+</html>

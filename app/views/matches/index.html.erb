@@ -1,0 +1,9 @@
+<h1>Matches</h1>
+<p>Just click on the match you want to bet on and continue!</p>
+<br/>
+<% @matches.each do |match| %>
+	<%= link_to match_path(match) do %>
+		<h2><%= match.hometeam %> vs <%= match.awayteam %></h2>
+	<% end %>
+<br/>
+<% end %>

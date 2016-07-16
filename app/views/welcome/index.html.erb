@@ -1,0 +1,28 @@
+<h1>Welcome</h1>
+<p>Try your luck without spending a penny !</p>
+<br/>
+<div class="row">
+	<div class="col-xs-6 col-md-4">
+		<button class="btn btn-primary">
+		<%= link_to "Show Matches", matches_path, {:style => 'color: #FFFFFF'} %>
+		</button>
+	</div>
+	
+	<div class="col-xs-6 col-md-4">
+	<button class="btn btn-success">
+	<%= link_to "Show Leaderboard", leaderboard_path, {:style => 'color: #FFFFFF'} %>
+	</button>
+	</div>
+	
+	<div class="col-xs-6 col-md-4">
+		<button class="btn btn-default">
+		<%= link_to "Instructions", instructions_path %>
+		</button>
+	</div>
+	
+	<div class="col-xs-6 col-md-4">
+		<button class="btn btn-danger">
+		<%= link_to "My Bets", root_path, {:style => 'color: #FFFFFF'} %>
+		</button>
+	</div>
+</div>
