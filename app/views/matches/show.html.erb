@@ -1,7 +1,8 @@
 <br/>
 <div class="row">
 	<%= link_to "Back to All Matches", matches_path %>
-	<h2><%= @match.hometeam %> vs <%= @match.awayteam %></h2><br/><br/>
+	<h2><%= @match.hometeam %> vs <%= @match.awayteam %></h2>
+	<h6><%= @match.stadium %>&nbsp;<%= @match.matchtime.strftime(" %B %d, %A at %H:%M") %></h6><br/><br/>
 	<div class="col-xs-4">
 		<%= @match.hometeam %> Wins <%= @match.homeodds.round(2) %>
 		<%= form_tag user_bets_path do %>
