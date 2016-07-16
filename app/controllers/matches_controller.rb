@@ -51,14 +51,4 @@ class MatchesController < ApplicationController
   	end
   	redirect_to ('/')
   end
-  
-  private
-  
-  def check_loggedin
-  	if !current_user
-  		flash[:notice] = "Please login to bet on the match"
-  		redirect_to :back
-  	end
-  end
-  
 end

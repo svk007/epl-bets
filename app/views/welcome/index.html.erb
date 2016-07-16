@@ -19,10 +19,11 @@
 		<%= link_to "Instructions", instructions_path %>
 		</button>
 	</div>
-	
+	<% if current_user %>
 	<div class="col-xs-6 col-md-4">
 		<button class="btn btn-danger">
-		<%= link_to "My Bets", root_path, {:style => 'color: #FFFFFF'} %>
+		<%= link_to "My Bets", show_user_bets_path, {:style => 'color: #FFFFFF'} %>
 		</button>
 	</div>
+	<% end %>
 </div>
