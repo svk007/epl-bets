@@ -4,6 +4,7 @@
 <% @matches.each do |match| %>
 	<%= link_to match_path(match) do %>
 		<h4><%= match.hometeam %> vs <%= match.awayteam %></h2>
+		<h6><%= match.stadium %>&nbsp;<%= match.matchtime.strftime(" %B %d, %A at %H:%M") %></h6>
 	<% end %>
 <br/>
 <% end %>

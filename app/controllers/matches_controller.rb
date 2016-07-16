@@ -27,6 +27,6 @@ class MatchesController < ApplicationController
   
   private
   def match_params
-    params.require(:match).permit(:hometeam,:awayteam,:homeodds,:awayodds,:drawodds)
+    params.require(:match).permit(:hometeam,:awayteam,:homeodds,:awayodds,:drawodds,:stadium,:matchtime)
   end
 end

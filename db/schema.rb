@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715171051) do
+ActiveRecord::Schema.define(version: 20160716163138) do
 
   create_table "bets", force: :cascade do |t|
     t.integer  "match_id"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20160715171051) do
     t.decimal  "homeodds"
     t.decimal  "awayodds"
     t.decimal  "drawodds"
+    t.string   "stadium"
+    t.datetime "matchtime"
   end
 
   create_table "users", force: :cascade do |t|
