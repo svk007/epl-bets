@@ -1,7 +1,7 @@
 <% @bets.each do |bet| %>
 	<% match = Match.find(bet.match_id) %>
 	<div class="row" id="betrow">
-		<span class="col-xs-4"><%= bet.team_name %></span>
+		<span class="col-xs-4"><%= bet.team_name.titleize %></span>
 		<span class="col-xs-4"><%= bet.amount %></span>
 		<span class="col-xs-4"><%= match.hometeam %> vs <%= match.awayteam %></span>
 	</div>
