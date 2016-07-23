@@ -14,12 +14,11 @@
 </head>
 <body>
 	<div id="navbar">
-		<span class="row">
-			<span class="col-md-2"><%= image_tag("logo.png", class: "icon") %></span>
-			<span class="col-md-8" id="heading">Punter's Paradise</span>
-			<span class="col-md-2" id="rightnav"></span>
-		</span>
-	</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-4"><%= image_tag("logo.png", class: "icon") %></div>
+			<div class="col-xs-12 col-md-8" id="heading">Punter's Paradise</div>
+		</div>
+	</div><br/>
 	<div class="container">
 		<% flash.each do |name, msg| %>
 		 <div class="flashmsg">
@@ -30,7 +29,7 @@
 			<% if current_user %>
 				Signed in as <strong><%= current_user.name %></strong>!
 				<%= button_to "Sign out", signout_path, id: "sign_out", class: "btn btn-primary", method: :get %><br/>
-				<span>Your coins : </span>
+				<span><b>Current coins : </b></span>
 				<span class="coins">
 					<%= current_user.coins %>&nbsp;<i class="glyphicon glyphicon-cd"></i>
 				</span>
