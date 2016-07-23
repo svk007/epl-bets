@@ -2,3 +2,12 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+#matchrow {
+	background-color: black;
+	width: auto;
+	margin: 1%;
+	padding: 1%;
+	border-color: green;
+	border-style: solid;
+	box-shadow: 5px 5px 5px #888888;
+}

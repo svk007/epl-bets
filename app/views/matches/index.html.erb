@@ -5,35 +5,43 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-6 col-md-3">
 		<% if !m1.nil? %>
+		<div id="matchrow">
 			<%= link_to match_path(m1) do %>
 				<h4><%= m1.hometeam %> vs <%= m1.awayteam %></h2>
 				<h6><%= m1.stadium %>&nbsp;<%= m1.matchtime.strftime(" %B %d, %A at %H:%M") %></h6>
 			<% end %>
 		<% end %>
+		</div>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-3">
 		<% if !m2.nil? %>
+		<div id="matchrow">
 			<%= link_to match_path(m2) do %>
 				<h4><%= m2.hometeam %> vs <%= m2.awayteam %></h2>
 				<h6><%= m2.stadium %>&nbsp;<%= m2.matchtime.strftime(" %B %d, %A at %H:%M") %></h6>
 			<% end %>
 		<% end %>
+		</div>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-3">
 		<% if !m3.nil? %>
+		<div id="matchrow">
 			<%= link_to match_path(m3) do %>
 				<h4><%= m3.hometeam %> vs <%= m3.awayteam %></h2>
 				<h6><%= m3.stadium %>&nbsp;<%= m3.matchtime.strftime(" %B %d, %A at %H:%M") %></h6>
 			<% end %>
 		<% end %>
+		</div>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-3">
 		<% if !m4.nil? %>
+		<div id="matchrow">
 			<%= link_to match_path(m4) do %>
 				<h4><%= m4.hometeam %> vs <%= m4.awayteam %></h2>
 				<h6><%= m4.stadium %>&nbsp;<%= m4.matchtime.strftime(" %B %d, %A at %H:%M") %></h6>
 			<% end %>
 		<% end %>
+		</div>
 	</div>
 </div>
 <br/>
