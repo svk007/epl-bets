@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	before_action :check_loggedin, only: [:mybets]
 	def leaderboard
-		@users = User.order(coins: :DESC)
+		@users = User.order(coins: :DESC).order(name: :ASC)
 	end
 	
 	def mybets

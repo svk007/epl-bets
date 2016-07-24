@@ -1,7 +1,7 @@
 class MatchesController < ApplicationController
 	before_action :check_loggedin, except: [:index]
   def index
-    @matches = Match.all
+    @matches = Match.all.order(:matchtime)
   end
   
   def new
