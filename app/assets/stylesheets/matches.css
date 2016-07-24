@@ -6,16 +6,23 @@
 	background-color: black;
 	width: auto;
 	margin: 1%;
-	padding-left: 5%;
+	padding: 1%;
 	border-color: green;
 	border-style: solid;
 	box-shadow: 5px 5px 5px #888888;
+	text-align: center;
 }
 
 #matchname {
-	color: crimson;	
+	color: crimson;
+	font-size: 150%;
 }
 
 #matchdetails {
 	color: white;
+}
+
+.matchicon {
+	height: 15%;
+	width: 15%;
 }

@@ -7,8 +7,11 @@
 		<% if !m1.nil? %>
 		<div id="matchrow">
 			<%= link_to match_path(m1) do %>
-				<span id="matchname"><h4><%= m1.hometeam %> vs <%= m1.awayteam %></h2></span>
-				<span id="matchdetails"><h6><%= m1.stadium %>&nbsp;<%= m1.matchtime.strftime(" %B %d, %A at %H:%M") %></h6></span>
+				<%= image_tag("#{m1.hometeam}".downcase.gsub(" ", "-"), class: "matchicon") %>
+				<span id="matchname"><br/><%= m1.hometeam %> vs <br/>
+				<%= m1.awayteam %></span><br/>
+				<%= image_tag("#{m1.awayteam}".downcase.gsub(" ", "-"), class: "matchicon") %><br/>
+				<span id="matchdetails"><%= m1.stadium %>&nbsp;<%= m1.matchtime.strftime(" %B %d, %A at %H:%M") %></span>
 			<% end %>
 		<% end %>
 		</div>
@@ -17,7 +20,10 @@
 		<% if !m2.nil? %>
 		<div id="matchrow">
 			<%= link_to match_path(m2) do %>
-				<span id="matchname"><h4><%= m2.hometeam %> vs <%= m2.awayteam %></h2></span>
+				<%= image_tag("#{m2.hometeam}".downcase.gsub(" ", "-"), class: "matchicon") %>
+				<span id="matchname"><br/><%= m2.hometeam %> vs <br/>
+				<%= m2.awayteam %></span><br/>
+				<%= image_tag("#{m2.awayteam}".downcase.gsub(" ", "-"), class: "matchicon") %>
 				<span id="matchdetails"><h6><%= m2.stadium %>&nbsp;<%= m2.matchtime.strftime(" %B %d, %A at %H:%M") %></h6></span>
 			<% end %>
 		<% end %>
@@ -27,7 +33,10 @@
 		<% if !m3.nil? %>
 		<div id="matchrow">
 			<%= link_to match_path(m3) do %>
-				<span id="matchname"><h4><%= m3.hometeam %> vs <%= m3.awayteam %></h2></span>
+				<%= image_tag("#{m3.hometeam}".downcase.gsub(" ", "-"), class: "matchicon") %>
+				<span id="matchname"><br/><%= m3.hometeam %> vs <br/>
+				<%= m3.awayteam %></span><br/>
+				<%= image_tag("#{m3.awayteam}".downcase.gsub(" ", "-"), class: "matchicon") %>
 				<span id="matchdetails"><h6><%= m3.stadium %>&nbsp;<%= m3.matchtime.strftime(" %B %d, %A at %H:%M") %></h6></span>
 			<% end %>
 		<% end %>
@@ -37,7 +46,10 @@
 		<% if !m4.nil? %>
 		<div id="matchrow">
 			<%= link_to match_path(m4) do %>
-				<span id="matchname"><h4><%= m4.hometeam %> vs <%= m4.awayteam %></h2></span>
+				<%= image_tag("#{m4.hometeam}".downcase.gsub(" ", "-"), class: "matchicon") %>
+				<span id="matchname"><br/><%= m4.hometeam %> vs <br/>
+				<%= m4.awayteam %></span><br/>
+				<%= image_tag("#{m4.awayteam}".downcase.gsub(" ", "-"), class: "matchicon") %>
 				<span id="matchdetails"><h6><%= m4.stadium %>&nbsp;<%= m4.matchtime.strftime(" %B %d, %A at %H:%M") %></h6></span>
 			<% end %>
 		<% end %>

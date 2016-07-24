@@ -9,6 +9,5 @@ Rails.application.routes.draw do
 	post 'bets', to: 'bets#userbet', as: 'user_bets'
 	get 'prizes', to: 'bets#usersprizes', as: 'user_prizes'
 	get 'leaderboard', to: 'users#leaderboard', as: 'leaderboard'
-	get 'instructions', to: 'welcome#instructions', as: 'instructions'
 	get 'mybets', to: 'users#mybets', as: 'show_user_bets'
 end
