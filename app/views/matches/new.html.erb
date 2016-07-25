@@ -1,10 +1,10 @@
 <%= form_for(@match) do |f| %>
-	<%= f.text_field :hometeam, placeholder: "Home Team" %>
-	<%= f.text_field :awayteam, placeholder: "Away Team" %>
-	<%= f.number_field :homeodds, value: 1, step: 0.01, placeholder: "Odds for Home Win" %>
-	<%= f.number_field :awayodds, value: 1,  step: 0.01, placeholder: "Odds for Away Win" %>
-	<%= f.number_field :drawodds, value: 1, step: 0.01, placeholder: "Odds for Draw" %>
-	<%= f.text_field :stadium, placeholder: "Stadium" %>
-	<%= f.datetime_select :matchtime %>
+	<%= f.text_field :hometeam, placeholder: "Home Team", style: "background-color: #000000;" %>
+	<%= f.text_field :awayteam, placeholder: "Away Team", style: "background-color: #000000;" %><br/>
+	<%= f.number_field :homeodds, value: 1, step: 0.01, placeholder: "Odds for Home Win", style: "background-color: #000000;" %>
+	<%= f.number_field :awayodds, value: 1,  step: 0.01, placeholder: "Odds for Away Win", style: "background-color: #000000;" %>
+	<%= f.number_field :drawodds, value: 1, step: 0.01, placeholder: "Odds for Draw", style: "background-color: #000000;" %><br/>
+	<%= f.text_field :stadium, placeholder: "Stadium", style: "background-color: #000000;" %><br/>
+	<span style="color:black;"><%= f.datetime_select :matchtime %></span><br/>
 	<%= f.submit "Add Match", class: "btn btn-success" %>
 <% end %>

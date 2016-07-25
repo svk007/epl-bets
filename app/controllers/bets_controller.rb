@@ -2,6 +2,11 @@ class BetsController < ApplicationController
 	def userbet
 		match_number = eval(params["id"])[:value]
 		the_match = Match.find(match_number)
+		if (the_match.matchtime - (Time.now+(5.5*60*60)))/3600 < 0.5
+			flash[:notice] = "You had to bet atleast half hour before the match starts"
+			redirect_to :back
+			return
+		end
 		team_name = eval(params["team"])[:value]
 		amount = params[:amount].to_i
 		decider = Bet.addbet(match_number,the_match,team_name,amount, current_user)

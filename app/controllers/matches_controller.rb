@@ -1,7 +1,13 @@
 class MatchesController < ApplicationController
 	before_action :check_loggedin, except: [:index]
   def index
-    @matches = Match.all.order(:matchtime)
+    @all_matches = Match.all.order(matchtime: :ASC)
+    @matches = []
+    @all_matches.each do |match|
+    	if ((match.matchtime - (Time.now+(5.5*60*60)))/3600 > 0.5)
+    		@matches << match
+    	end
+    end
   end
   
   def new
