@@ -4,7 +4,7 @@ class Bet < ActiveRecord::Base
 	validates :amount, numericality: {greater_than: 0, message: "Please enter a valid amount"}
 	
 	def self.addbet(match_number,the_match,team_name,amount,user) 
-		if (amount <= 0)
+		if (amount <= 0 || amount > user.coins)
   		return false
   	end
   	b = Bet.new

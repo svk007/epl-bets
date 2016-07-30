@@ -1,4 +1,69 @@
 /*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+#matchrow {
+	background-color: black;
+	width: auto;
+	margin: 1%;
+	margin-bottom: 3%;
+	padding: 1%;
+	border-color: green;
+	border-style: solid;
+	box-shadow: 5px 5px 5px #888888;
+	text-align: center;
+}
+
+.showicon {
+	height: 128px;
+	width: 128px;
+}
+
+#matchname {
+	color: crimson;
+	font-size: 150%;
+}
+
+#matchdetails {
+	color: white;
+}
+
+.matchicon {
+	height: 15%;
+	width: 15%;
+}
+.userrow {
+  background-color: lightgrey;
+  border: 5px solid skyblue;
+  padding: 1%;
+  padding-left: 10%;
+  opacity: 0.7;
+}
+
+#addspacing {
+	margin-left: 3%;
+}
+
+#betrow {
+	background-color: silver;
+  border: 5px solid mediumorchid;
+  padding: 1%;
+  padding-left: 10%;
+  margin: 1%;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.leadddata {
+	color: black;
+}
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -10,9 +75,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
  
 .row {
  	margin-left: 0px;

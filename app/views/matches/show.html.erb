@@ -41,9 +41,9 @@
 	<br/>
 </div>
 <div align="center">
-	<h2><%= image_tag("#{@match.hometeam}".downcase.gsub(" ", "-")) %>
+	<h2><%= image_tag("#{@match.hometeam}".downcase.gsub(" ", "-"), class: "showicon") %>
 	<%= @match.hometeam %> vs <%= @match.awayteam %>
-	<%= image_tag("#{@match.awayteam}".downcase.gsub(" ", "-")) %>
+	<%= image_tag("#{@match.awayteam}".downcase.gsub(" ", "-"), class: "showicon") %>
 	</h2>
 	<h4><%= @match.stadium %>&nbsp;<%= @match.matchtime.strftime(" %B %d, %A at %H:%M") %></h4><br/><br/>
 </div>
