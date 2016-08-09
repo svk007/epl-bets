@@ -22,18 +22,20 @@ class BetsController < ApplicationController
 	def usersprizes
 		@match = Match.find(params[:id])
 		@match.bets.each do |bet|
-		if bet.team_name == params[:name]
-			if params[:place] == "home"
-				prize = bet.amount * @match.homeodds
-			elsif params[:place] == "away"
-				prize = bet.amount * @match.awayodds
-			elsif params[:place] == "draw"
-				prize = bet.amount * @match.drawodds
+			if bet.team_name == params[:name]
+				if params[:place] == "home"
+					prize = bet.amount * @match.homeodds
+				elsif params[:place] == "away"
+					prize = bet.amount * @match.awayodds
+				elsif params[:place] == "draw"
+					prize = bet.amount * @match.drawodds
+				end
+				winner = User.find(bet.user_id)
+				winner.coins = winner.coins + prize
+				winner.save!
 			end
-			winner = User.find(bet.user_id)
-			winner.coins = winner.coins + prize
-			winner.save!
-			end
+			bet.winner = params[:name].titleize
+			bet.save!
 		end
 		redirect_to ('/')
 	end

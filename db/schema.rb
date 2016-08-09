@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716163138) do
+ActiveRecord::Schema.define(version: 20160809070435) do
 
   create_table "bets", force: :cascade do |t|
     t.integer  "match_id"
     t.integer  "user_id"
     t.integer  "amount"
     t.string   "team_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "winner",     default: "TBD"
   end
 
   add_index "bets", ["match_id", "user_id"], name: "index_bets_on_match_id_and_user_id"
