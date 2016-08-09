@@ -1,34 +1,37 @@
-<center>
-	<div class="userrow">
-		<div class="row" style="color: darkgreen;">
-			<strong>
-				<span class="col-md-3">Rank</span>
-				<span class="col-md-3">Punter</span>
-				<span class="col-md-3">Coins</span>
-				<span class="col-md-3">Currently Invested</span>
-			</strong>
-		</div>
+<center><div class="userrow">
+	<div class="row" style="color: darkgreen;">
+		<strong>
+			<span class="col-xs-2">Rank</span>
+			<span class="col-xs-4">Punter</span>
+			<span class="col-xs-3">Coins</span>
+			<span class="col-xs-3">At Stake</span>
+		</strong>
 	</div>
-	<% rank = 1 %>
-	<% @users.each do |user| %>
-		<div class="userrow">
-			<div class="row">
-				<% amount = 0 %>
-				<strong>
-				<span class="col-md-3 leadddata"><%= rank %></span>
-				<span class="col-md-3 leadddata"><%= user.name %></span>
-				<span class="col-md-3 leadddata"><%= user.coins %></span>
-				<span class="col-md-3 leadddata">
-					<% user.bets.each do |bet| %>
-						<% if bet.winner == "TBD" %>
-							<% amount = amount + bet.amount %>
-						<% end %>
-					<% end %>
-					<%= amount %>
-					</span>
-				</strong>
+</div>
+<% rank = 1 %>
+<% index = 0 %>
+<% @users.each do |user| %>
+	<div class="row userrow">
+		<% amount = 0 %>
+		<strong>
+			<span class="leadddata">
+				<% if current_user && current_user.name == user.name %>
+					<span class="thisuser">
+				<% end %>
+				<span class="col-xs-2"><%= rank %></span>
+				<span class="col-xs-4"><%= user.name %></span>
+				<span class="col-xs-3"><%= user.coins %></span>
+				<span class="col-xs-3"><%= @bets[index]-user.coins %></span>
+			</span></span>
+		</strong>
+		<% if index+1 < @users.count %>
+			<% if @bets[index+1] == @bets[index] %>
+				<% index = index + 1 %>
+			<% else %>
 				<% rank = rank + 1 %>
-			</div>
-		</div>
-	<% end %>
+				<% index = index + 1 %>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>
 </center>

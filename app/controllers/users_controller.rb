@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	def leaderboard
 		all_users = User.all
 		users_hash = {}
+		@bets = []
 		all_users.each do |user|
 			invested = 0
 			user.bets.each do |bet|
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
 		@users = []
 		sortedusers.each do |k,v|
 			@users << k
+			@bets << v
 		end
 	end
 	
